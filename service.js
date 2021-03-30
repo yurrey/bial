@@ -1,17 +1,18 @@
-cards = document.querySelectorAll('.content')
+checkbtn = document.querySelectorAll('.btn')
+cards = document.querySelectorAll('.card')
+
 let selected = []
-cards.forEach((check, i)=>{
+checkbtn.forEach((e, i)=>{
   e.onclick=()=>{
-    let check = e.querySelector('i')
-    if(check.classList.contains('btn-check')){
-      e.style.backgroundColor="white"
-      check.classList.remove('btn-check')
+    let icon = e.querySelector('i')
+    if(icon.classList.contains('fa-check')){
+      cards[i].style.backgroundColor="white"
+      icon.classList.remove('fa-check')
     }else{
-      e.style.backgroundColor="yellow",
-      check.classList.add('btn-check')
+      cards[i].style.backgroundColor="yellow",
+      icon.classList.add('fa-check')
     }
     
     
   }
-  localStorage.setItem('elemnts', selected)
 })
